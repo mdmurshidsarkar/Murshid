@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"content="Md Murshid Sarkar websie web development
+    and hacker is programer"
+    <meta name="keywords"content="md Murshid Sarkar,murshid,murshid
+    sarkar,hacker,programer,web development">
+    <link rel="icon"type="image/jpg"href="murshi.jpg"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Md Murshid Sarkar</title>
+    <link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"type="text/css"href="style.css">
+    <link rel="stylesheet"type="text/css"href="style1.css">
+  </head>
+  <body>
+    <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <div class="img">
+     <img src="murshid.jpg"alt="image">
+    </div>
+   <h3>Md Murshid Sarkar</h3>
+   <a class="btn"href="">Facebook</a>
+   <a class="btn"href="">Github</a>
+   <a class="btn"href="">TikTok</a>
+   <a class="btn"href="">Twitter</a>
+   <a class="btn"href="">LinkedIn</a>
+   <a class="btn"href="">No Instagram</a>
+   <a class="btn"href="">No YouTube</a>
+   <h2 id="ani"></h2>
+   <div class="floot">
+    <label>Show update & notice</label>
+    <input id="update-checkbox"type="checkbox">
+  </div>
+<div id="update-notice"class="no">
+<h2 id="n">Update & Notice:</h3>
+<h2 id="update-message" style="font-size: 28px; line-height: 1.5; margin-bottom:
+0;">{% for i in no %}
+{{i.text}}
+{% endfor %}</h3>
+</div>
+
+<script>
+  // Get the update checkbox element
+  var checkbox = document.getElementById("update-checkbox");
+  
+  // Get the update notice element
+  var notice = document.getElementById("update-notice");
+  
+  // Get the update message element
+  var message = document.getElementById("update-message");
+  
+  // Split the message into characters
+  var chars = message.innerHTML.split("");
+  
+  // Clear the message
+  message.innerHTML = "";
+  
+  // Loop through each character and add it to the message slowly
+  chars.forEach(function(char, index) {
+    setTimeout(function() {
+      message.innerHTML += char;
+    }, index * 50);
+  });
+  
+  // Add event listener for checkbox
+  checkbox.addEventListener("change", function() {
+    // Show or hide the update notice depending on the checkbox value
+    if (this.checked) {
+      notice.style.display = "block";
+    } else {
+      notice.style.display = "none";
+    }
+  });
+</script>
+   <script>
+    const textElement = document.querySelector('#ani');
+    const phrases = [
+      { text: 'i am from Bangladesh', class: 'red' },
+      { text: 'student', class: 'yellow' },
+      { text: 'web developer ', class: 'green' },
+      {text:'app developer',class:'mkk'},
+      { text: 'programer', class: 'red' },
+      { text: 'Thanks For Support Us', class: 'green' }
+    ];
+
+    function slowPrint(index) {
+      const phrase = phrases[index];
+      const text = phrase.text;
+      const textArray = text.split('');
+      let printedText = '';
+      let currentIndex = 0;
+
+      const intervalId = setInterval(() => {
+        printedText += textArray[currentIndex];
+        textElement.textContent = printedText;
+        textElement.className = `text ${phrase.class}`;
+
+        currentIndex++;
+
+        if (currentIndex === textArray.length) {
+          clearInterval(intervalId);
+          setTimeout(() => {
+            slowPrint((index + 1) % phrases.length);
+          }, 500);
+        }
+      }, 80);
+    }
+
+    slowPrint(0);
+  </script>
+</div>
+
+  </body>
+</html>
